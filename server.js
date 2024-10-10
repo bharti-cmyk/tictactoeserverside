@@ -4,7 +4,7 @@ const { Server } = require("socket.io");
 const httpServer = createServer();
 const io = new Server(httpServer, {
   cors: {
-    origin: "http://localhost:3000", // Change to your frontend URL if needed
+    origin: "https://tictactoe-bharti-assessment.netlify.app", // Change to your frontend URL if needed
     methods: ["GET", "POST"],
     credentials: true,
   },
@@ -108,6 +108,6 @@ const notifyOpponentOnDisconnect = (socketId) => {
   }
 };
 
-httpServer.listen(8000, () => {
+httpServer.listen(8000, '0.0.0.0', () => {
   console.log("Server is running on http://localhost:8000");
 });
